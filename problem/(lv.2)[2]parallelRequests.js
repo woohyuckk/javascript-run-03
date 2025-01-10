@@ -8,6 +8,8 @@
  * @returns {Promise<[any, any]>} - 두 Promise의 결과를 담은 배열을 반환하는 Promise
  *
  * @example
+ * 
+ * 
  * const promiseA = new Promise((resolve) => setTimeout(() => resolve('A'), 100));
  * const promiseB = new Promise((resolve) => setTimeout(() => resolve('B'), 50));
  *
@@ -15,7 +17,18 @@
  *   console.log(results); // ['A', 'B']
  * });
  */
-async function parallelRequests(promise1, promise2) {}
+async function parallelRequests(promise1, promise2) {
+    try{
+        const result = await Promise.all([
+            promise1,
+            promise2
+        ]);
+        return result;
+    }
+    catch(error){
+        throw error;
+    }
+}
 
 // export를 수정하지 마세요.
 export { parallelRequests };

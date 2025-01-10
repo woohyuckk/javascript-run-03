@@ -10,7 +10,24 @@
  */
 
 // TODO: loginRequest 함수를 작성하세요.
-async function loginRequest(id, pw) {}
+async function loginRequest(id, pw) {
+    let idAuthentication = "admin";
+    let pwAuthentication = "1234";
+    try{
+        if(id === idAuthentication && pw === pwAuthentication){
+            return "ok"
+        }
+        else{
+            return "fail"
+        }
+
+    }
+    catch(error){
+        throw error; 
+    }
+
+
+}
 
 // export를 수정하지 마세요.
 export { loginRequest };

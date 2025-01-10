@@ -20,7 +20,19 @@ async function fetchUsers() {
 }
 
 // TODO: getUsers 함수를 작성하세요.
-async function getUsers() {}
+async function getUsers() {
+  let users = await fetchUsers();
+  let getUser = [];
+  users.forEach((element,index) => {
+    getUser[index] = element.name;
+  })
+  console.log(getUser)
+  return getUser
+}
+  
+  
+
+
 
 // export를 수정하지 마세요.
 export { getUsers };
